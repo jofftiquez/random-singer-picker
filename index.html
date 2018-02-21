@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+  <center>
+    <h1 id="chosen" style="font-size: 200px;">00000</h1>
+    <button onclick="rand()" style="font-size: 50px">Go</button>
+  </center>
+  <script>
+    const arr = [
+      {
+        name: 'Nad',
+        number: '6544'
+      },
+      {
+        name: 'Mayk',
+        number: '1420'
+      },
+      {
+        name: 'JP',
+        number: '8411'
+      },
+      {
+        name: 'Grace',
+        number: '8083'
+      },
+      {
+        name: 'Trista',
+        number: '8151'
+      },
+      {
+        name: 'Lance',
+        number: '8505'
+      },
+      {
+        name: 'Joff',
+        number: '7088'
+      },
+      {
+        name: 'Dale',
+        number: '3421'
+      },
+      {
+        name: 'Mark',
+        number: '4408'
+      }
+    ];
+
+
+    function rand () {
+      if(arr.length === 1) {
+        console.log('length =====')
+        document.getElementById('chosen').innerHTML = arr[0].name + ' - ' + arr[0].number + ' (last)';
+        return;
+      }
+      const index = Math.floor(Math.random() * arr.length) + 1 
+      console.log(index, arr)
+      // console.log(done.filter(item => item === index).length)
+      const obj = arr[index];
+      arr.splice(index, 1)
+      // console.log(index, obj, arr)
+      document.getElementById('chosen').innerHTML = obj.name + ' - ' + obj.number;
+    }
+  </script>
+</body>
+</html>
